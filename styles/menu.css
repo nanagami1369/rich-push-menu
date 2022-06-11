@@ -7,3 +7,35 @@ html,
 body {
     height: 100%;
 }
+
+/* menu */
+.push-menu {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    font-size: 2em;
+    font-weight: bold;
+    border: none;
+}
+
+#push-menu-1 {
+    background-color: #f2ff7c;
+}
+
+#push-menu-2 {
+    background-color: #7cffde;
+}
+
+#push-menu-3 {
+    background-color: #ffc27c;
+    font-size: 1.5em;
+}
+
+#push-menu-4 {
+    background-color: #ff8b7c;
+    font-size: 1.9em;
+}
+
+#push-menu-5 {
+    background-color: #7caaff;
+}
