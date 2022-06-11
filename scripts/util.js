@@ -82,7 +82,7 @@ export class TouchPosition {
         this.#clientX = touch.clientX
         this.#clientY = touch.clientY
         this.#target = touch.target
-        document.addEventListener('touchmove', this.eventHandler.touchMove)
+        document.addEventListener('touchmove', this.eventHandler.touchMove, { passive: false })
     }
 
     /**
@@ -123,6 +123,7 @@ export class TouchPosition {
          * @param {TouchEvent} event
          */
         touchMove: (event) => {
+            event.preventDefault()
             const touch = event.touches[0]
             this.#clientX = touch.clientX
             this.#clientY = touch.clientY
