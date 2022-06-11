@@ -9,33 +9,76 @@ body {
 }
 
 /* menu */
+
+#push-menu-area {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    /* top :jsから指定*/
+    /* left : jsから指定*/
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#push-menu-area.push-menu__open {
+    display: block;
+}
+
 .push-menu {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    font-size: 2em;
+    width: 100px;
+    height: 100px;
+    font-size: 1em;
     font-weight: bold;
     border: none;
+    position: absolute;
 }
 
 #push-menu-1 {
     background-color: #f2ff7c;
+    transform: translate(-100px, -72.654px);
+}
+
+
+#push-menu-1.push-menu__hover {
+    transform: translate(-120px, -92.654px);
 }
 
 #push-menu-2 {
     background-color: #7cffde;
+    transform: translate(100px, -72.654px);
+}
+
+#push-menu-2.push-menu__hover {
+    transform: translate(120px, -92.654px);
 }
 
 #push-menu-3 {
     background-color: #ffc27c;
-    font-size: 1.5em;
+    font-size: 0.8em;
+    transform: translate(-75px, 72.654px);
+}
+
+#push-menu-3.push-menu__hover {
+    transform: translate(-95px, 92.654px);
 }
 
 #push-menu-4 {
     background-color: #ff8b7c;
-    font-size: 1.9em;
+    font-size: 1em;
+    transform: translate(75px, 72.654px);
+}
+
+#push-menu-4.push-menu__hover {
+    transform: translate(95px, 92.654px);
 }
 
 #push-menu-5 {
     background-color: #7caaff;
+    transform: translateY(-120px);
+}
+
+#push-menu-5.push-menu__hover {
+    background-color: #9bbeff;
+    transform: translateY(-140px);
 }
