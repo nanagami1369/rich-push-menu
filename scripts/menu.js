@@ -40,10 +40,12 @@ const menuStart = (event) => {
     let touchMovePoolingId = -1
     const touchPosition = new TouchPosition(event)
     let timerId = setTimeout(() => {
+        // 始点
         const startX = event.touches[0].clientX
         const startY = event.touches[0].clientY
         menuOpen(startY, startX)
         const menuSwipe = () => {
+            // 終点
             const endX = touchPosition.getClientX()
             const endY = touchPosition.getClientY()
             // 始点と終点の座標からスワイプされた角度を求める
@@ -91,7 +93,9 @@ const menuStart = (event) => {
         /** @type {HTMLElement} */
         const selectMenu = document.querySelector('.push-menu__hover')
         if (selectMenu != null) {
+            // メニューが開かれていたら実行
             selectMenu.classList.remove('push-menu__hover')
+            // 今回はサンプルなのでdata-hrefに入っているurl(色々な検索エンジン)へ飛ぶ
             location.href = selectMenu.dataset.href
         }
         document.removeEventListener('touchend', menuStop)
