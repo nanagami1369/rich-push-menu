@@ -8,6 +8,16 @@ body {
     height: 100%;
 }
 
+/* 説明 */
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* menu */
 
 #push-menu-area {
@@ -38,7 +48,6 @@ body {
     background-color: #f2ff7c;
     transform: translate(-100px, -72.654px);
 }
-
 
 #push-menu-1.push-menu__hover {
     transform: translate(-120px, -92.654px);
