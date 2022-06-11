@@ -41,8 +41,8 @@ const menuStart = (event) => {
     const touchPosition = new TouchPosition(event)
     let timerId = setTimeout(() => {
         menuOpen(event.touches[0].clientY, event.touches[0].clientX)
-        let startX = event.touches[0].clientX
-        let startY = event.touches[0].clientY
+        const startX = event.touches[0].clientX
+        const startY = event.touches[0].clientY
 
         const menuSwipe = () => {
             const endX = touchPosition.getClientX()
