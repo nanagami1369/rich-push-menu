@@ -7,46 +7,18 @@
  * @returns {number}
  */
 export function getStartAndEndPositionToDegree(startX, startY, endX, endY) {
-    let degree = 0
-    if (startX > endX && startY === endY) {
-        // 左
-        degree = 270
-    } else if (startX > endX && startY > endY) {
-        // 左上
-        const width = startX - endX
-        const height = startY - endY
-        const radian = Math.atan(height / width)
-        degree = (radian * 180) / Math.PI + 270
-    } else if (startX === endX && startY > endY) {
-        // 上
-        degree = 0
-    } else if (startX < endX && startY > endY) {
-        // 右上
-        const height = endX - startX
-        const width = startY - endY
-        const radian = Math.atan(height / width)
-        degree = (radian * 180) / Math.PI
-    } else if (startX < endX && startY === endY) {
-        // 右
-        degree = 90
-    } else if (startX < endX && startY < endY) {
-        // 右下
-        const width = endX - startX
-        const height = endY - startY
-        const radian = Math.atan(height / width)
-        degree = (radian * 180) / Math.PI + 90
-    } else if (startX === endX && startY < endY) {
-        // 下
-        degree = 180
-    } else if (startX > endX && startY < endY) {
-        // 左下
-        const height = startX - endX
-        const width = endY - startY
-        const radian = Math.atan(height / width)
-        degree = (radian * 180) / Math.PI + 180
-    } else {
-        // そんなものは無い
-    }
+    let sin = endY - startY
+    let cos = endX - startX
+    // 270° + θ
+    cos *= -1
+    let tmp
+    tmp = sin
+    sin = cos
+    cos = tmp
+    // ラジアンを求める
+    const radian = Math.atan2(sin, cos)
+    // ラジアンから角度に変換
+    let degree = (radian * 180) / Math.PI + 180
     return degree
 }
 
